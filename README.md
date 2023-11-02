@@ -16,7 +16,7 @@ import pytarski as pt
 board = pt.TarskiBoard()
 ```
 
-then you can add objects to the board, where you specify the shape, size, column, and row for the object
+then you can add objects to the board, where you specify the shape, size, column (0 - 7), and row (0 - 7) for the object
 
 ```python
 a = board.add('tet', 'small', 3, 5)
