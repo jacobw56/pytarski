@@ -4,7 +4,6 @@ class BooleTruthTable:
     def __init__(self, sentence):
         s = sentence.split()
         self.atomics = []
-        self.sentence = 'lambda '
         for c in s:
             if len(c) == 1 and not c.isalpha():
                 raise NameError('Invalid atomic name. Must be alphabetic character.')
@@ -16,14 +15,29 @@ class BooleTruthTable:
                 raise NameError(f'Invalid sentence.')
         for c in s:
             if len(c) == 1:
-                self.sentence += c + ', '
-        self.sentence = self.sentence[:-2] + ' : ' + sentence
-        self.evalSentence = exec(self.sentence)
-        sig = signature(self.evalSentence)
-        print(len(sig.parameters))
+                self.atomics.append(c)
+        self.sentence = sentence
 
-    def eval(self, l):
+    def checkTrue(self, l):
         for d in l:
-            if l:
-                pass
-                
+            for k in d:
+                if k not in self.atomics:
+                    if not k.isprintable():
+                        k = 'not printable'
+                    raise NameError(f'Invalid atomic name {k}.')
+                exec(f'{k} = {d[k]}')
+            if not eval(self.sentence):
+                return False
+        return True
+    
+    def checkFalse(self, l):
+        for d in l:
+            for k in d:
+                if k not in self.atomics:
+                    if not k.isprintable():
+                        k = 'not printable'
+                    raise NameError(f'Invalid atomic name {k}.')
+                exec(f'{k} = {d[k]}')
+            if eval(self.sentence):
+                return False
+        return True
