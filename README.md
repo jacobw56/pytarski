@@ -11,9 +11,9 @@ Check the `examples` folder for a sample script highlighting some of the basic f
 To get right to it, you first import the package and create a board
 
 ```python
-import pytarski as pt
+import pytarski as tw
 
-board = pt.TarskiBoard()
+board = tw.TarskisWorldBoard()
 ```
 
 then you can add objects to the board, where you specify the shape (`cube`, `dodec`, or `tet`), size (`small`, `medium`, or `large`), column (0 - 7), and row (0 - 7) for the object
@@ -26,11 +26,11 @@ b = board.add('cube', 'medium', 4, 5)
 and you can now evaluate sentences about the objects using the Tarski's World predicates
 
 ```python
-sentence1 = pt.tet(a) # True
-sentence1 &= pt.leftOf(a, b) # True
+sentence1 = tw.tet(a) # True
+sentence1 &= tw.leftOf(a, b) # True
 
-sentence2 = pt.dodec(b) # False
-sentence2 |= pt.sameCol(a, b) # False
+sentence2 = tw.dodec(b) # False
+sentence2 |= tw.sameCol(a, b) # False
 
 sentence3 = not sentence2 or not sentence1 # True
 
