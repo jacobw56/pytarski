@@ -36,6 +36,6 @@ class TarskisWorldBoard:
             elif (obj.size == 'large' or size == 'large'):
                 if (obj.col == col + 1 or obj.col == col - 1 or obj.col == col) and (obj.row == row + 1 or obj.row == row - 1 or obj.row == row):
                     raise NameError(f'Cannot place an object in a tile surrounding a large object')
-        self.objects.append(TarskiObject(shape, size, col, row))
+        self.objects.append(TarskisWorldObject(shape, size, col, row))
         return self.objects[-1]
             
