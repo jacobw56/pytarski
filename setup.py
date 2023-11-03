@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.4' 
+VERSION = '0.0.6' 
 DESCRIPTION = 'Tarski\'s World for python'
 LONG_DESCRIPTION = 'A python version of the Tarski\'s World universe'
 
