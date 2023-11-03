@@ -1,7 +1,7 @@
-from pytarski import Boole as b
+import pytarski as tw
 
 # create a "truth table" with a sentence
-tt = b.BooleTruthTable('not p and q')
+tt = tw.BooleTruthTable('not p and q')
 
 # create a list of dictionaries with your atomic statement (variable) names and 
 # the values which make them true
