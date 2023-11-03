@@ -1,7 +1,7 @@
-import pytarski as t
+import pytarski as tw
 
 # create a board
-board = t.TarskiBoard()
+board = tw.TarskisWorldBoard()
 
 # add some objects to the 8x8 board, rows and columns are 0 through 7
 # the parameters are: shape, size, column, row
@@ -24,17 +24,17 @@ e = board.add('cube', 'large', 1, 4) # yes
 f = board.add('cube', 'small', 0, 2) # yes
 
 # check a few true conditions
-s1 = t.tet(a)
-s1 &= t.cube(b)
-s1 &= t.dodec(c)
-s1 &= t.adjoins(b, c)
-s1 &= t.frontOf(b, c)
-s1 &= t.larger(c, a)
-s1 &= t.smaller(a, b)
+s1 = tw.tet(a)
+s1 &= tw.cube(b)
+s1 &= tw.dodec(c)
+s1 &= tw.adjoins(b, c)
+s1 &= tw.frontOf(b, c)
+s1 &= tw.larger(c, a)
+s1 &= tw.smaller(a, b)
 
 # check a few false conditions
-s2 = t.cube(e)
-s2 &= t.between(e, d, f)
+s2 = tw.cube(e)
+s2 &= tw.between(e, d, f)
 
 # Use the AND connective
 s3 = s1 & s2
