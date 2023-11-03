@@ -1,5 +1,3 @@
-from inspect import signature
-
 class BooleTruthTable:
     def __init__(self, sentence):
         s = sentence.split()
