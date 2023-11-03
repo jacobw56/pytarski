@@ -22,6 +22,8 @@ class BooleTruthTable:
         sig = signature(self.evalSentence)
         print(len(sig.parameters))
 
-    def eval(self, d):
-        pass
+    def eval(self, l):
+        for d in l:
+            if l:
+                pass
                 
