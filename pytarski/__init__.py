@@ -1,5 +1,6 @@
 from .TarskisWorld import TarskisWorldBoard
 from .TarskisWorld import TarskisWorldObject
+from .Boole import BooleTruthTable
 from .predicates import cube
 from .predicates import dodec
 from .predicates import tet
