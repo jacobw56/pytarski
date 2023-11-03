@@ -1,5 +1,5 @@
-from .Tarski import TarskiBoard
-from .Tarski import TarskiObject
+from .TarskisWorld import TarskisWorldBoard
+from .TarskisWorld import TarskisWorldObject
 from .predicates import cube
 from .predicates import dodec
 from .predicates import tet

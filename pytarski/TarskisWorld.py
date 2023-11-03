@@ -1,4 +1,4 @@
-class TarskiObject:
+class TarskisWorldObject:
     def __init__(self, shape, size, col, row):
         if shape not in ['cube', 'dodec', 'tet']:
             raise NameError('Invalid shape')
@@ -16,7 +16,7 @@ class TarskiObject:
     def __str__(self):
         return f'{self.shape} {self.size} {self.col} {self.row}'
     
-class TarskiBoard:
+class TarskisWorldBoard:
     def __init__(self):
         self.objects = []
 
