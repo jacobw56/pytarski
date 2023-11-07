@@ -24,17 +24,17 @@ e = board.add('cube', 'large', 1, 4) # yes
 f = board.add('cube', 'small', 0, 2) # yes
 
 # check a few true conditions
-s1 = tw.tet(a)
-s1 &= tw.cube(b)
-s1 &= tw.dodec(c)
-s1 &= tw.adjoins(b, c)
-s1 &= tw.frontOf(b, c)
-s1 &= tw.larger(c, a)
-s1 &= tw.smaller(a, b)
+s1 = board.tet(a)
+s1 &= board.cube(b)
+s1 &= board.dodec(c)
+s1 &= board.adjoins(b, c)
+s1 &= board.frontOf(b, c)
+s1 &= board.larger(c, a)
+s1 &= board.smaller(a, b)
 
 # check a few false conditions
-s2 = tw.cube(e)
-s2 &= tw.between(e, d, f)
+s2 = board.cube(e)
+s2 &= board.between(e, d, f)
 
 # Use the AND connective
 s3 = s1 & s2
@@ -46,8 +46,8 @@ s4 = s1 | s3
 s5 = not s4
 
 # see if it all checks out
-print(f'The sentence s1 is {s1}')
-print(f'The sentence s2 is {s2}')
-print(f'The sentence s3 is {s3}')
-print(f'The sentence s4 is {s4}')
-print(f'The sentence s5 is {s5}')
+print(f'The sentence s1 is {s1}') # True
+print(f'The sentence s2 is {s2}') # False
+print(f'The sentence s3 is {s3}') # False
+print(f'The sentence s4 is {s4}') # True
+print(f'The sentence s5 is {s5}') # False
