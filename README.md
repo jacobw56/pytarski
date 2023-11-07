@@ -26,11 +26,11 @@ b = board.add('cube', 'medium', 4, 5)
 and you can now evaluate sentences about the objects using the Tarski's World predicates
 
 ```python
-sentence1 = tw.tet(a) # True
-sentence1 &= tw.leftOf(a, b) # True
+sentence1 = board.tet(a) # True
+sentence1 &= board.leftOf(a, b) # True
 
-sentence2 = tw.dodec(b) # False
-sentence2 |= tw.sameCol(a, b) # False
+sentence2 = board.dodec(b) # False
+sentence2 |= board.sameCol(a, b) # False
 
 sentence3 = not sentence2 or not sentence1 # True
 
